@@ -7,36 +7,36 @@ import Section from 'components/Section/Section';
 import Notification from 'components/Notification/Notification';
 
 const App = () => {
-  // const [good, setGood] = useState(0);
-  // const [neutral, setNeutral] = useState(0);
-  // const [bad, setBad] = useState(0);
-
-  // const onLeaveFeedback = option => {
-  //   switch (option) {
-  //     case 'good':
-  //       setGood(prevGood => prevGood + 1);
-  //       break;
-  //     case 'neutral':
-  //       setNeutral(prevNeutral => prevNeutral + 1);
-  //       break;
-  //     case 'bad':
-  //       setBad(prevBad => prevBad + 1);
-  //       break;
-  //     default:
-  //       break;
-  //   }
-  // };
-
-  const [feedback, setFeedback] = useState({ good: 0, neutral: 0, bad: 0 });
+  const [good, setGood] = useState(0);
+  const [neutral, setNeutral] = useState(0);
+  const [bad, setBad] = useState(0);
 
   const onLeaveFeedback = option => {
-    setFeedback(prevFeedback => ({
-      ...feedback,
-      [option]: prevFeedback[option] + 1,
-    }));
+    switch (option) {
+      case 'good':
+        setGood(prevGood => prevGood + 1);
+        break;
+      case 'neutral':
+        setNeutral(prevNeutral => prevNeutral + 1);
+        break;
+      case 'bad':
+        setBad(prevBad => prevBad + 1);
+        break;
+      default:
+        break;
+    }
   };
 
-  const { good, neutral, bad } = feedback;
+  // const [feedback, setFeedback] = useState({ good: 0, neutral: 0, bad: 0 });
+
+  // const onLeaveFeedback = option => {
+  //   setFeedback(prevFeedback => ({
+  //     ...feedback,
+  //     [option]: prevFeedback[option] + 1,
+  //   }));
+  // };
+
+  // const { good, neutral, bad } = feedback;
 
   const countTotalFeedback = () => {
     return good + neutral + bad;
